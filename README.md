@@ -1,4 +1,5 @@
 # Balkonkraftwerk Vorgabe Einspeiseleistung
+<img width="1082" height="563" alt="{27F1B325-1D34-47FB-8143-8D39A2E5C15A}" src="https://github.com/user-attachments/assets/9a92d394-d1ad-4176-8703-f767f5dcbc34" />
 ## Werte
 Es werden gemessene Werte addiert.
 Weil das Balkonkraftwerk nur 800W ausgeben kann

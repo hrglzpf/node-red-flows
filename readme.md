@@ -26,4 +26,12 @@ Nachdem die Werte von den Shelly Messgeräten aber subscribed werden und somit o
 
   
 # Licht Keller Gang
-<img width="1124" height="357" alt="{FE550D5B-EE04-425E-BF4C-03B3FFFD152A}" src="https://github.com/user-attachments/assets/0e875b31-29fc-4c11-8df3-6c64721cbed3" />
+<img width="1124" height="357" alt="{FE550D5B-EE04-425E-BF4C-03B3FFFD152A}" src="https://github.com/user-attachments/assets/0e875b31-29fc-4c11-8df3-6c64721cbed3" />  
+
+
+
+# Lüftung Vorratskeller
+<img width="1030" height="261" alt="{E37022EE-433D-4B68-A52C-4AC7E5654740}" src="https://github.com/user-attachments/assets/ab3e1ef5-a456-44ed-9498-8bbe749d31c5" />  
+
+
+

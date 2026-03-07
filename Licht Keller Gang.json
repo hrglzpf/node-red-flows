@@ -1,1 +1,564 @@
-[{"id":"1cd7b7df60534388","type":"group","z":"7ea6c8de0b96dc0b","name":"Licht Keller Gang","style":{"label":true},"nodes":["8ce6e39117455881","7046f0a808b063d4","53ec3102b8d3da0e","39212594473a4a63","9a1918f4e5fdc34d","45a284b635fd94d6","075d4585c8c8797c","81f0f784f3fc9936","fcdde62587877509","23b34f694ae4987d","48850c87a76228c0","eac67eb3ac2d850c","92318227df711af1"],"x":34,"y":179,"w":1112,"h":342},{"id":"8ce6e39117455881","type":"poll-state","z":"7ea6c8de0b96dc0b","g":"1cd7b7df60534388","name":"Keller Gang Beleuchtung Mode","server":"aa06184c1521b74e","version":3,"exposeAsEntityConfig":"","updateInterval":"24","updateIntervalType":"num","updateIntervalUnits":"hours","outputInitially":true,"outputOnChanged":true,"entityId":"input_select.beleuchtung_keller_mode","stateType":"str","ifState":"","ifStateType":"str","ifStateOperator":"is","outputs":1,"outputProperties":[{"property":"payload","propertyType":"msg","value":"string","valueType":"entityState"},{"property":"data","propertyType":"msg","value":"","valueType":"entity"},{"property":"topic","propertyType":"msg","value":"","valueType":"triggerId"}],"x":190,"y":220,"wires":[["81f0f784f3fc9936"]]},{"id":"7046f0a808b063d4","type":"delay","z":"7ea6c8de0b96dc0b","g":"1cd7b7df60534388","name":"","pauseType":"delay","timeout":"5","timeoutUnits":"minutes","rate":"1","nbRateUnits":"1","rateUnits":"second","randomFirst":"1","randomLast":"5","randomUnits":"seconds","drop":false,"allowrate":false,"outputs":1,"x":600,"y":440,"wires":[["23b34f694ae4987d"]]},{"id":"53ec3102b8d3da0e","type":"switch","z":"7ea6c8de0b96dc0b","g":"1cd7b7df60534388","name":"","property":"payload","propertyType":"msg","rules":[{"t":"eq","v":"on","vt":"str"},{"t":"eq","v":"off","vt":"str"}],"checkall":"true","repair":false,"outputs":2,"x":410,"y":380,"wires":[["7046f0a808b063d4","fcdde62587877509"],["7046f0a808b063d4"]]},{"id":"39212594473a4a63","type":"server-state-changed","z":"7ea6c8de0b96dc0b","g":"1cd7b7df60534388","name":"Mitte ein","server":"aa06184c1521b74e","version":6,"outputs":2,"exposeAsEntityConfig":"","entities":{"entity":["binary_sensor.bewegungsmelder_keller_gang_mitte_bewegung"],"substring":[],"regex":[]},"outputInitially":true,"stateType":"str","ifState":"on","ifStateType":"str","ifStateOperator":"is","outputOnlyOnStateChange":false,"for":"0","forType":"num","forUnits":"minutes","ignorePrevStateNull":false,"ignorePrevStateUnknown":false,"ignorePrevStateUnavailable":false,"ignoreCurrentStateUnknown":false,"ignoreCurrentStateUnavailable":false,"outputProperties":[{"property":"payload","propertyType":"msg","value":"string","valueType":"entityState"},{"property":"data","propertyType":"msg","value":"","valueType":"eventData"},{"property":"topic","propertyType":"msg","value":"Mitte ein","valueType":"str"},{"property":"reset","propertyType":"msg","value":"reset","valueType":"str"}],"x":120,"y":280,"wires":[["92318227df711af1"],[]]},{"id":"9a1918f4e5fdc34d","type":"server-state-changed","z":"7ea6c8de0b96dc0b","g":"1cd7b7df60534388","name":"Mitte aus","server":"aa06184c1521b74e","version":6,"outputs":2,"exposeAsEntityConfig":"","entities":{"entity":["binary_sensor.bewegungsmelder_keller_gang_mitte_bewegung"],"substring":[],"regex":[]},"outputInitially":false,"stateType":"str","ifState":"off","ifStateType":"str","ifStateOperator":"is","outputOnlyOnStateChange":false,"for":"0","forType":"num","forUnits":"minutes","ignorePrevStateNull":false,"ignorePrevStateUnknown":false,"ignorePrevStateUnavailable":false,"ignoreCurrentStateUnknown":false,"ignoreCurrentStateUnavailable":false,"outputProperties":[{"property":"payload","propertyType":"msg","value":"string","valueType":"entityState"},{"property":"data","propertyType":"msg","value":"","valueType":"eventData"},{"property":"topic","propertyType":"msg","value":"Mitte aus","valueType":"str"}],"x":120,"y":340,"wires":[["92318227df711af1"],[]]},{"id":"45a284b635fd94d6","type":"server-state-changed","z":"7ea6c8de0b96dc0b","g":"1cd7b7df60534388","name":"Verteiler ein","server":"aa06184c1521b74e","version":6,"outputs":2,"exposeAsEntityConfig":"","entities":{"entity":["binary_sensor.bewegungsmelder_keller_gang_verteiler_bewegung"],"substring":[],"regex":[]},"outputInitially":true,"stateType":"str","ifState":"on","ifStateType":"str","ifStateOperator":"is","outputOnlyOnStateChange":false,"for":"0","forType":"num","forUnits":"minutes","ignorePrevStateNull":false,"ignorePrevStateUnknown":false,"ignorePrevStateUnavailable":false,"ignoreCurrentStateUnknown":false,"ignoreCurrentStateUnavailable":false,"outputProperties":[{"property":"payload","propertyType":"msg","value":"string","valueType":"entityState"},{"property":"data","propertyType":"msg","value":"","valueType":"eventData"},{"property":"topic","propertyType":"msg","value":"Verteiler ein","valueType":"str"},{"property":"reset","propertyType":"msg","value":"reset","valueType":"str"}],"x":130,"y":420,"wires":[["92318227df711af1"],[]]},{"id":"075d4585c8c8797c","type":"server-state-changed","z":"7ea6c8de0b96dc0b","g":"1cd7b7df60534388","name":"Verteiler aus","server":"aa06184c1521b74e","version":6,"outputs":2,"exposeAsEntityConfig":"","entities":{"entity":["binary_sensor.bewegungsmelder_keller_gang_verteiler_bewegung"],"substring":[],"regex":[]},"outputInitially":false,"stateType":"str","ifState":"off","ifStateType":"str","ifStateOperator":"is","outputOnlyOnStateChange":false,"for":"0","forType":"num","forUnits":"minutes","ignorePrevStateNull":false,"ignorePrevStateUnknown":false,"ignorePrevStateUnavailable":false,"ignoreCurrentStateUnknown":false,"ignoreCurrentStateUnavailable":false,"outputProperties":[{"property":"payload","propertyType":"msg","value":"string","valueType":"entityState"},{"property":"data","propertyType":"msg","value":"","valueType":"eventData"},{"property":"topic","propertyType":"msg","value":"Verteiler aus","valueType":"str"}],"x":130,"y":480,"wires":[["92318227df711af1"],[]]},{"id":"81f0f784f3fc9936","type":"change","z":"7ea6c8de0b96dc0b","g":"1cd7b7df60534388","name":"","rules":[{"t":"set","p":"KellerGangLichtMode","pt":"flow","to":"payload","tot":"msg"}],"action":"","property":"","from":"","to":"","reg":false,"x":530,"y":220,"wires":[[]]},{"id":"fcdde62587877509","type":"switch","z":"7ea6c8de0b96dc0b","g":"1cd7b7df60534388","name":"Ist Automatik?","property":"KellerGangLichtMode","propertyType":"flow","rules":[{"t":"eq","v":"Automatik","vt":"str"},{"t":"else"}],"checkall":"false","repair":false,"outputs":2,"x":800,"y":320,"wires":[["48850c87a76228c0"],[]]},{"id":"23b34f694ae4987d","type":"switch","z":"7ea6c8de0b96dc0b","g":"1cd7b7df60534388","name":"Ist Automatik?","property":"KellerGangLichtMode","propertyType":"flow","rules":[{"t":"eq","v":"Automatik","vt":"str"},{"t":"else"}],"checkall":"false","repair":false,"outputs":2,"x":800,"y":440,"wires":[["eac67eb3ac2d850c"],[]]},{"id":"48850c87a76228c0","type":"api-call-service","z":"7ea6c8de0b96dc0b","g":"1cd7b7df60534388","name":"Ganglicht ein","server":"aa06184c1521b74e","version":7,"debugenabled":false,"action":"light.turn_on","floorId":[],"areaId":[],"deviceId":[],"entityId":["light.dimmer_gang_keller_ch5"],"labelId":[],"data":"","dataType":"jsonata","mergeContext":"","mustacheAltTags":false,"outputProperties":[],"queue":"none","blockInputOverrides":true,"domain":"light","service":"turn_on","x":1030,"y":320,"wires":[[]]},{"id":"eac67eb3ac2d850c","type":"api-call-service","z":"7ea6c8de0b96dc0b","g":"1cd7b7df60534388","name":"Ganglicht aus","server":"aa06184c1521b74e","version":7,"debugenabled":false,"action":"light.turn_off","floorId":[],"areaId":[],"deviceId":[],"entityId":["light.dimmer_gang_keller_ch5"],"labelId":[],"data":"","dataType":"jsonata","mergeContext":"","mustacheAltTags":false,"outputProperties":[],"queue":"none","blockInputOverrides":true,"domain":"light","service":"turn_off","x":1040,"y":440,"wires":[[]]},{"id":"92318227df711af1","type":"junction","z":"7ea6c8de0b96dc0b","g":"1cd7b7df60534388","x":300,"y":380,"wires":[["53ec3102b8d3da0e"]]},{"id":"aa06184c1521b74e","type":"server","name":"Home Assistant","version":6,"addon":true,"rejectUnauthorizedCerts":true,"ha_boolean":["y","yes","true","on","home","open"],"connectionDelay":true,"cacheJson":true,"heartbeat":true,"heartbeatInterval":30,"areaSelector":"friendlyName","deviceSelector":"friendlyName","entitySelector":"friendlyName","statusSeparator":": ","statusYear":"hidden","statusMonth":"short","statusDay":"numeric","statusHourCycle":"default","statusTimeFormat":"h:m","enableGlobalContextStore":false},{"id":"84ab41156b572c50","type":"global-config","env":[],"modules":{"node-red-contrib-home-assistant-websocket":"0.80.3"}}]
+[
+    {
+        "id": "7046f0a808b063d4",
+        "type": "delay",
+        "z": "7ea6c8de0b96dc0b",
+        "g": "1cd7b7df60534388",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "5",
+        "timeoutUnits": "minutes",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 600,
+        "y": 440,
+        "wires": [
+            [
+                "23b34f694ae4987d"
+            ]
+        ]
+    },
+    {
+        "id": "53ec3102b8d3da0e",
+        "type": "switch",
+        "z": "7ea6c8de0b96dc0b",
+        "g": "1cd7b7df60534388",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "on",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "off",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 410,
+        "y": 380,
+        "wires": [
+            [
+                "7046f0a808b063d4",
+                "fcdde62587877509"
+            ],
+            [
+                "7046f0a808b063d4"
+            ]
+        ]
+    },
+    {
+        "id": "39212594473a4a63",
+        "type": "server-state-changed",
+        "z": "7ea6c8de0b96dc0b",
+        "g": "1cd7b7df60534388",
+        "name": "Mitte ein",
+        "server": "aa06184c1521b74e",
+        "version": 6,
+        "outputs": 2,
+        "exposeAsEntityConfig": "",
+        "entities": {
+            "entity": [
+                "binary_sensor.bewegungsmelder_keller_gang_mitte_bewegung"
+            ],
+            "substring": [],
+            "regex": []
+        },
+        "outputInitially": true,
+        "stateType": "str",
+        "ifState": "on",
+        "ifStateType": "str",
+        "ifStateOperator": "is",
+        "outputOnlyOnStateChange": false,
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "ignorePrevStateNull": false,
+        "ignorePrevStateUnknown": false,
+        "ignorePrevStateUnavailable": false,
+        "ignoreCurrentStateUnknown": false,
+        "ignoreCurrentStateUnavailable": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "string",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "eventData"
+            },
+            {
+                "property": "topic",
+                "propertyType": "msg",
+                "value": "Mitte ein",
+                "valueType": "str"
+            },
+            {
+                "property": "reset",
+                "propertyType": "msg",
+                "value": "reset",
+                "valueType": "str"
+            }
+        ],
+        "x": 120,
+        "y": 280,
+        "wires": [
+            [
+                "92318227df711af1"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "9a1918f4e5fdc34d",
+        "type": "server-state-changed",
+        "z": "7ea6c8de0b96dc0b",
+        "g": "1cd7b7df60534388",
+        "name": "Mitte aus",
+        "server": "aa06184c1521b74e",
+        "version": 6,
+        "outputs": 2,
+        "exposeAsEntityConfig": "",
+        "entities": {
+            "entity": [
+                "binary_sensor.bewegungsmelder_keller_gang_mitte_bewegung"
+            ],
+            "substring": [],
+            "regex": []
+        },
+        "outputInitially": false,
+        "stateType": "str",
+        "ifState": "off",
+        "ifStateType": "str",
+        "ifStateOperator": "is",
+        "outputOnlyOnStateChange": false,
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "ignorePrevStateNull": false,
+        "ignorePrevStateUnknown": false,
+        "ignorePrevStateUnavailable": false,
+        "ignoreCurrentStateUnknown": false,
+        "ignoreCurrentStateUnavailable": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "string",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "eventData"
+            },
+            {
+                "property": "topic",
+                "propertyType": "msg",
+                "value": "Mitte aus",
+                "valueType": "str"
+            }
+        ],
+        "x": 120,
+        "y": 340,
+        "wires": [
+            [
+                "92318227df711af1"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "45a284b635fd94d6",
+        "type": "server-state-changed",
+        "z": "7ea6c8de0b96dc0b",
+        "g": "1cd7b7df60534388",
+        "name": "Verteiler ein",
+        "server": "aa06184c1521b74e",
+        "version": 6,
+        "outputs": 2,
+        "exposeAsEntityConfig": "",
+        "entities": {
+            "entity": [
+                "binary_sensor.bewegungsmelder_keller_gang_verteiler_bewegung"
+            ],
+            "substring": [],
+            "regex": []
+        },
+        "outputInitially": true,
+        "stateType": "str",
+        "ifState": "on",
+        "ifStateType": "str",
+        "ifStateOperator": "is",
+        "outputOnlyOnStateChange": false,
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "ignorePrevStateNull": false,
+        "ignorePrevStateUnknown": false,
+        "ignorePrevStateUnavailable": false,
+        "ignoreCurrentStateUnknown": false,
+        "ignoreCurrentStateUnavailable": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "string",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "eventData"
+            },
+            {
+                "property": "topic",
+                "propertyType": "msg",
+                "value": "Verteiler ein",
+                "valueType": "str"
+            },
+            {
+                "property": "reset",
+                "propertyType": "msg",
+                "value": "reset",
+                "valueType": "str"
+            }
+        ],
+        "x": 130,
+        "y": 420,
+        "wires": [
+            [
+                "92318227df711af1"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "075d4585c8c8797c",
+        "type": "server-state-changed",
+        "z": "7ea6c8de0b96dc0b",
+        "g": "1cd7b7df60534388",
+        "name": "Verteiler aus",
+        "server": "aa06184c1521b74e",
+        "version": 6,
+        "outputs": 2,
+        "exposeAsEntityConfig": "",
+        "entities": {
+            "entity": [
+                "binary_sensor.bewegungsmelder_keller_gang_verteiler_bewegung"
+            ],
+            "substring": [],
+            "regex": []
+        },
+        "outputInitially": false,
+        "stateType": "str",
+        "ifState": "off",
+        "ifStateType": "str",
+        "ifStateOperator": "is",
+        "outputOnlyOnStateChange": false,
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "ignorePrevStateNull": false,
+        "ignorePrevStateUnknown": false,
+        "ignorePrevStateUnavailable": false,
+        "ignoreCurrentStateUnknown": false,
+        "ignoreCurrentStateUnavailable": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "string",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "eventData"
+            },
+            {
+                "property": "topic",
+                "propertyType": "msg",
+                "value": "Verteiler aus",
+                "valueType": "str"
+            }
+        ],
+        "x": 130,
+        "y": 480,
+        "wires": [
+            [
+                "92318227df711af1"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "8ce6e39117455881",
+        "type": "poll-state",
+        "z": "7ea6c8de0b96dc0b",
+        "g": "1cd7b7df60534388",
+        "name": "Keller Gang Beleuchtung Mode",
+        "server": "aa06184c1521b74e",
+        "version": 3,
+        "exposeAsEntityConfig": "",
+        "updateInterval": "24",
+        "updateIntervalType": "num",
+        "updateIntervalUnits": "hours",
+        "outputInitially": true,
+        "outputOnChanged": true,
+        "entityId": "input_select.beleuchtung_keller_mode",
+        "stateType": "str",
+        "ifState": "",
+        "ifStateType": "str",
+        "ifStateOperator": "is",
+        "outputs": 1,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "string",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entity"
+            },
+            {
+                "property": "topic",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "triggerId"
+            }
+        ],
+        "x": 190,
+        "y": 220,
+        "wires": [
+            [
+                "81f0f784f3fc9936"
+            ]
+        ]
+    },
+    {
+        "id": "81f0f784f3fc9936",
+        "type": "change",
+        "z": "7ea6c8de0b96dc0b",
+        "g": "1cd7b7df60534388",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "KellerGangLichtMode",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 530,
+        "y": 220,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "fcdde62587877509",
+        "type": "switch",
+        "z": "7ea6c8de0b96dc0b",
+        "g": "1cd7b7df60534388",
+        "name": "Ist Automatik?",
+        "property": "KellerGangLichtMode",
+        "propertyType": "flow",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "Automatik",
+                "vt": "str"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 2,
+        "x": 800,
+        "y": 320,
+        "wires": [
+            [
+                "48850c87a76228c0"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "23b34f694ae4987d",
+        "type": "switch",
+        "z": "7ea6c8de0b96dc0b",
+        "g": "1cd7b7df60534388",
+        "name": "Ist Automatik?",
+        "property": "KellerGangLichtMode",
+        "propertyType": "flow",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "Automatik",
+                "vt": "str"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 2,
+        "x": 800,
+        "y": 440,
+        "wires": [
+            [
+                "eac67eb3ac2d850c"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "48850c87a76228c0",
+        "type": "api-call-service",
+        "z": "7ea6c8de0b96dc0b",
+        "g": "1cd7b7df60534388",
+        "name": "Ganglicht ein",
+        "server": "aa06184c1521b74e",
+        "version": 7,
+        "debugenabled": false,
+        "action": "light.turn_on",
+        "floorId": [],
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "light.dimmer_gang_keller_ch5"
+        ],
+        "labelId": [],
+        "data": "",
+        "dataType": "jsonata",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "blockInputOverrides": true,
+        "domain": "light",
+        "service": "turn_on",
+        "x": 1030,
+        "y": 320,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "eac67eb3ac2d850c",
+        "type": "api-call-service",
+        "z": "7ea6c8de0b96dc0b",
+        "g": "1cd7b7df60534388",
+        "name": "Ganglicht aus",
+        "server": "aa06184c1521b74e",
+        "version": 7,
+        "debugenabled": false,
+        "action": "light.turn_off",
+        "floorId": [],
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "light.dimmer_gang_keller_ch5"
+        ],
+        "labelId": [],
+        "data": "",
+        "dataType": "jsonata",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "blockInputOverrides": true,
+        "domain": "light",
+        "service": "turn_off",
+        "x": 1040,
+        "y": 440,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "92318227df711af1",
+        "type": "junction",
+        "z": "7ea6c8de0b96dc0b",
+        "g": "1cd7b7df60534388",
+        "x": 300,
+        "y": 380,
+        "wires": [
+            [
+                "53ec3102b8d3da0e"
+            ]
+        ]
+    },
+    {
+        "id": "aa06184c1521b74e",
+        "type": "server",
+        "name": "Home Assistant",
+        "version": 6,
+        "addon": true,
+        "rejectUnauthorizedCerts": true,
+        "ha_boolean": [
+            "y",
+            "yes",
+            "true",
+            "on",
+            "home",
+            "open"
+        ],
+        "connectionDelay": true,
+        "cacheJson": true,
+        "heartbeat": true,
+        "heartbeatInterval": 30,
+        "areaSelector": "friendlyName",
+        "deviceSelector": "friendlyName",
+        "entitySelector": "friendlyName",
+        "statusSeparator": ": ",
+        "statusYear": "hidden",
+        "statusMonth": "short",
+        "statusDay": "numeric",
+        "statusHourCycle": "default",
+        "statusTimeFormat": "h:m",
+        "enableGlobalContextStore": false
+    },
+    {
+        "id": "884baa40b249186f",
+        "type": "global-config",
+        "env": [],
+        "modules": {
+            "node-red-contrib-home-assistant-websocket": "0.80.3"
+        }
+    }
+]

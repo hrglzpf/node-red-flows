@@ -22,4 +22,8 @@ Damit sichergestellt ist, dass die Vorgabe auch in Ausnahmefällen gemacht wird,
 
 Die Werte werden von der Fronius API im Standard nur alle 30 Sekunden abgefragt.  
 Das ist eine nicht veränderbare Standardeinstellung.  
-Nachdem die Werte von den Shelly Messgeräten aber subscribed werden und somit on change nicht vorhersebar kommen, entsteht oft ein etwas seltsames Bild mit inkosistenent Werten.
+Nachdem die Werte von den Shelly Messgeräten aber subscribed werden und somit on change nicht vorhersebar kommen, entsteht oft ein etwas seltsames Bild mit inkosistenent Werten.  
+
+  
+# Licht Keller Gang
+<img width="1124" height="357" alt="{FE550D5B-EE04-425E-BF4C-03B3FFFD152A}" src="https://github.com/user-attachments/assets/0e875b31-29fc-4c11-8df3-6c64721cbed3" />

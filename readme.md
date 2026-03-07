@@ -1,5 +1,6 @@
 # Balkonkraftwerk Vorgabe Einspeiseleistung
 <img width="1082" height="563" alt="{27F1B325-1D34-47FB-8143-8D39A2E5C15A}" src="https://github.com/user-attachments/assets/9a92d394-d1ad-4176-8703-f767f5dcbc34" />  
+
 ## Werte
 Es werden gemessene Werte addiert.  
 Weil das Balkonkraftwerk nur 800W ausgeben kann und damit die Auswirkungen nicht so groß sind, wird die Summe danach durch 4 dividiert.  
@@ -18,6 +19,7 @@ Damit sichergestellt ist, dass die Vorgabe auch in Ausnahmefällen gemacht wird,
   
 # Update Fronius Werte für Dashboard
 <img width="1223" height="234" alt="{16F2F52C-EFBF-4113-BFCC-B43C8D853C9D}" src="https://github.com/user-attachments/assets/a15cf03e-bfd8-4563-91a1-23464427ce3a" />  
+
 Die Werte werden von der Fronius API im Standard nur alle 30 Sekunden abgefragt.  
 Das ist eine nicht veränderbare Standardeinstellung.  
 Nachdem die Werte von den Shelly Messgeräten aber subscribed werden und somit on change nicht vorhersebar kommen, entsteht oft ein etwas seltsames Bild mit inkosistenent Werten.

@@ -15,3 +15,10 @@ Da nur eine **Unterstützung** der Anlage auf dem Dach realisiert werden soll, w
 ## Vorgabe 0, wenn keine Unterstützung
 In der Zeit von Sonnenaufgang bis Sonnenuntergang soll nicht eingespeist werden, deshalb Vorgabe fix 0.
 Damit sichergestellt ist, dass die Vorgabe auch in Ausnahmefällen gemacht wird, wird über einen Injector alle 10 Minuten die Vorgabe 0 aktiviert
+
+# Update Fronius Werte für Dashboard
+<img width="1223" height="234" alt="{16F2F52C-EFBF-4113-BFCC-B43C8D853C9D}" src="https://github.com/user-attachments/assets/a15cf03e-bfd8-4563-91a1-23464427ce3a" />
+
+Die Werte werden von der Fronius API im Standard nur alle 30 Sekunden abgefragt.  
+Das ist eine nicht veränderbare Standardeinstellung.  
+Nachdem die Werte von den Shelly Messgeräten aber subscribed werden und somit on change nicht vorhersebar kommen, entsteht oft ein etwas seltsames Bild mit inkosistenent Werten.

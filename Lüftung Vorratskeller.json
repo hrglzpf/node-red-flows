@@ -1,0 +1,353 @@
+[
+    {
+        "id": "98635c0db5ce14e2",
+        "type": "ha-time",
+        "z": "a2a8f08011091894",
+        "g": "ea89481f0259917b",
+        "name": "Lüfter ein",
+        "server": "aa06184c1521b74e",
+        "version": 4,
+        "exposeAsEntityConfig": "",
+        "entityId": "input_datetime.luftung_vorratskeller_auto_ein",
+        "property": "",
+        "offset": "0",
+        "offsetType": "num",
+        "offsetUnits": "minutes",
+        "randomOffset": false,
+        "repeatDaily": true,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "string",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entity"
+            },
+            {
+                "property": "topic",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "triggerId"
+            }
+        ],
+        "sunday": true,
+        "monday": true,
+        "tuesday": true,
+        "wednesday": true,
+        "thursday": true,
+        "friday": true,
+        "saturday": true,
+        "ignorePastDate": true,
+        "x": 200,
+        "y": 200,
+        "wires": [
+            [
+                "ab22958bcde04658"
+            ]
+        ]
+    },
+    {
+        "id": "f47e693e10b44c10",
+        "type": "ha-time",
+        "z": "a2a8f08011091894",
+        "g": "ea89481f0259917b",
+        "name": "Lüfter aus",
+        "server": "aa06184c1521b74e",
+        "version": 4,
+        "exposeAsEntityConfig": "",
+        "entityId": "input_datetime.luftung_vorratskeller_auto_aus",
+        "property": "",
+        "offset": "0",
+        "offsetType": "num",
+        "offsetUnits": "minutes",
+        "randomOffset": false,
+        "repeatDaily": true,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "string",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entity"
+            },
+            {
+                "property": "topic",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "triggerId"
+            }
+        ],
+        "sunday": true,
+        "monday": true,
+        "tuesday": true,
+        "wednesday": true,
+        "thursday": true,
+        "friday": true,
+        "saturday": true,
+        "ignorePastDate": true,
+        "x": 200,
+        "y": 280,
+        "wires": [
+            [
+                "eb06b8c515a43cd3"
+            ]
+        ]
+    },
+    {
+        "id": "e39b5fcae27a70c9",
+        "type": "server-state-changed",
+        "z": "a2a8f08011091894",
+        "g": "ea89481f0259917b",
+        "name": "Betriebsart",
+        "server": "aa06184c1521b74e",
+        "version": 6,
+        "outputs": 1,
+        "exposeAsEntityConfig": "",
+        "entities": {
+            "entity": [
+                "input_select.luftung_vorratskeller_betriebsart"
+            ],
+            "substring": [],
+            "regex": []
+        },
+        "outputInitially": true,
+        "stateType": "str",
+        "ifState": "",
+        "ifStateType": "str",
+        "ifStateOperator": "is",
+        "outputOnlyOnStateChange": false,
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "ignorePrevStateNull": false,
+        "ignorePrevStateUnknown": false,
+        "ignorePrevStateUnavailable": false,
+        "ignoreCurrentStateUnknown": false,
+        "ignoreCurrentStateUnavailable": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "string",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "eventData"
+            },
+            {
+                "property": "topic",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "triggerId"
+            }
+        ],
+        "x": 200,
+        "y": 120,
+        "wires": [
+            [
+                "acc462c6717b5359"
+            ]
+        ]
+    },
+    {
+        "id": "acc462c6717b5359",
+        "type": "change",
+        "z": "a2a8f08011091894",
+        "g": "ea89481f0259917b",
+        "name": "Lüfter Betriebsart",
+        "rules": [
+            {
+                "t": "set",
+                "p": "LuefterVorratskellerBetriebsart",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 480,
+        "y": 120,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ab22958bcde04658",
+        "type": "switch",
+        "z": "a2a8f08011091894",
+        "g": "ea89481f0259917b",
+        "name": "Ist Automatik?",
+        "property": "LuefterVorratskellerBetriebsart",
+        "propertyType": "flow",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "Automatik",
+                "vt": "str"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 2,
+        "x": 720,
+        "y": 200,
+        "wires": [
+            [
+                "cdc9e04bb50ecef8"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "eb06b8c515a43cd3",
+        "type": "switch",
+        "z": "a2a8f08011091894",
+        "g": "ea89481f0259917b",
+        "name": "Ist Automatik?",
+        "property": "LuefterVorratskellerBetriebsart",
+        "propertyType": "flow",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "Automatik",
+                "vt": "str"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 2,
+        "x": 720,
+        "y": 280,
+        "wires": [
+            [
+                "8cf5c7706d442245"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "cdc9e04bb50ecef8",
+        "type": "api-call-service",
+        "z": "a2a8f08011091894",
+        "g": "ea89481f0259917b",
+        "name": "Lüfter ein",
+        "server": "aa06184c1521b74e",
+        "version": 7,
+        "debugenabled": false,
+        "action": "switch.turn_on",
+        "floorId": [],
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "switch.schaltaktor_lufter"
+        ],
+        "labelId": [],
+        "data": "",
+        "dataType": "jsonata",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "blockInputOverrides": true,
+        "domain": "switch",
+        "service": "turn_on",
+        "x": 1040,
+        "y": 200,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "8cf5c7706d442245",
+        "type": "api-call-service",
+        "z": "a2a8f08011091894",
+        "g": "ea89481f0259917b",
+        "name": "Lüfter aus",
+        "server": "aa06184c1521b74e",
+        "version": 7,
+        "debugenabled": false,
+        "action": "switch.turn_off",
+        "floorId": [],
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "switch.schaltaktor_lufter"
+        ],
+        "labelId": [],
+        "data": "",
+        "dataType": "jsonata",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "blockInputOverrides": true,
+        "domain": "switch",
+        "service": "turn_off",
+        "x": 1040,
+        "y": 280,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "aa06184c1521b74e",
+        "type": "server",
+        "name": "Home Assistant",
+        "version": 6,
+        "addon": true,
+        "rejectUnauthorizedCerts": true,
+        "ha_boolean": [
+            "y",
+            "yes",
+            "true",
+            "on",
+            "home",
+            "open"
+        ],
+        "connectionDelay": true,
+        "cacheJson": true,
+        "heartbeat": true,
+        "heartbeatInterval": 30,
+        "areaSelector": "friendlyName",
+        "deviceSelector": "friendlyName",
+        "entitySelector": "friendlyName",
+        "statusSeparator": ": ",
+        "statusYear": "hidden",
+        "statusMonth": "short",
+        "statusDay": "numeric",
+        "statusHourCycle": "default",
+        "statusTimeFormat": "h:m",
+        "enableGlobalContextStore": false
+    },
+    {
+        "id": "dcdaf33eeb43e35c",
+        "type": "global-config",
+        "env": [],
+        "modules": {
+            "node-red-contrib-home-assistant-websocket": "0.80.3"
+        }
+    }
+]
